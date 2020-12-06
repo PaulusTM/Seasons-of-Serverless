@@ -1,0 +1,34 @@
+### Invoke function locally without URL Parameter
+GET  http://localhost:7071/api/ladoovalidator HTTP/1.1
+
+### Invoke function locally with picture of ladoo
+GET  http://localhost:7071/api/ladoovalidator HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://punampaul.com/wp-content/uploads/2020/01/boondi-laddu.jpg"
+}
+
+### Invoke function locally with picture of doughnut
+GET  http://localhost:7071/api/ladoovalidator HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://www.cookingclassy.com/wp-content/uploads/2014/01/krispy-kreme-copycat-recipe-edit+text..jpg"
+}
+
+### Invoke function locally with picture of golfbal
+GET  http://localhost:7071/api/ladoovalidator HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://www.golf.nl/-/media/images/equipment/2019/callaway/golfballen/callaway-magna-grote-golfbal-equipment-2019.jpg?rev=829438256&crop=1&w=875&la=nl-NL&hash=959CF36C6147D57E00CD3F24023399CA"
+}
+
+### Invoke function locally with picture of tennisballen
+GET  http://localhost:7071/api/ladoovalidator HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://media-01.imu.nl/storage/sportloaded.nl/5532/tennisbal-aanschaffen-1170x500.jpg?t=1593675694"
+}
