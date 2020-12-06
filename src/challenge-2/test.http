@@ -32,3 +32,12 @@ content-type: application/json
 {
     "url": "https://media-01.imu.nl/storage/sportloaded.nl/5532/tennisbal-aanschaffen-1170x500.jpg?t=1593675694"
 }
+
+
+### Final deployment - https://ladoo-paulustm.azurewebsites.net/api/ladoovalidator
+GET  https://ladoo-paulustm.azurewebsites.net/api/ladoovalidator HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://punampaul.com/wp-content/uploads/2020/01/boondi-laddu.jpg"
+}
