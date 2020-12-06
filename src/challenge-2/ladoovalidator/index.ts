@@ -8,22 +8,24 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
 
     if (!req.body || !req.body.url) {
 
-        console.log('No URL passed in request')
+        let result = { error: "Pass an image URL in the JSON body of your request" }
+
         context.res = {
             "status": 400,
-            "body": "Pass an image URL in the JSON body of your request"
+            "body": JSON.stringify(result),
+            "headers": {
+                'Content-Type': 'application/json'
+            }
         }
 
     } else {
 
         const payloadUrl = req.body.url
 
-        console.log("Executing classification");
-
         const predictorCredentials = new ApiKeyCredentials({ inHeader: { "Prediction-key": process.env["predictionKey"] } })
         const predictor = new PredictionAPIClient(predictorCredentials, process.env["endPoint"])
 
-        const results = await predictor.classifyImageUrl(process.env["projectID"], process.env["publishIterationName"], { "url": payloadUrl })
+        let results = await predictor.classifyImageUrl(process.env["projectID"], process.env["publishIterationName"], { "url": payloadUrl })
 
         context.res = {
             "status": 200,
